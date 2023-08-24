@@ -60,24 +60,24 @@ async function sortLargeFile() {
   outputStream.close();
 
   /*здесь костыль, на случай не создания папки temp, и не обновления в output.txt*/
-
   // Объявляем функцию для удаления временных файлов и папки
-  async function deleteTempFiles() {
-    try {
-      // Удаляем каждый временный файл
-      for (const tempFile of tempFiles) {
-        await fs.promises.unlink(tempFile);
-      }
+  //   async function deleteTempFiles() {
+  //     try {
+  //       // Удаляем каждый временный файл
+  //       for (const tempFile of tempFiles) {
+  //         await fs.promises.unlink(tempFile);
+  //       }
 
-      // Удаляем временную папку
-      await fs.promises.rmdir(tempFolderPath);
+  //       // Удаляем временную папку
+  //       await fs.promises.rmdir(tempFolderPath);
 
-      console.log("Удаление временных файлов и папки завершено.");
-    } catch (error) {
-      console.error("Ошибка при удалении временных файлов и папки:", error);
-    }
-  }
-  deleteTempFiles();
+  //       console.log("Удаление временных файлов и папки завершено.");
+  //     } catch (error) {
+  //       console.error("Ошибка при удалении временных файлов и папки:", error);
+  //     }
+  //   }
+  //   deleteTempFiles();
+
   //Вывод служебных сообщений о сортировке
   //Время
   const end = process.hrtime(start);
